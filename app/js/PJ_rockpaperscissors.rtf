@@ -1,7 +1,7 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1345\cocoasubrtf380
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
 {\fonttbl\f0\fmodern\fcharset0 Courier;}
 {\colortbl;\red255\green255\blue255;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww14080\viewh9800\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15100\viewkind0
 \deftab720
 \pard\pardeftab720
 
@@ -47,7 +47,6 @@ function getComputerMove(move) \{\
 	return move;\
 \}\
 \
-\
 function getWinner(playerMove,computerMove) \{\
     var winner;\
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.\
@@ -80,7 +79,6 @@ else \{\
 return winner;\
 \}\
 \
-\
 function playToFive() \{\
     console.log("Let's play Rock, Paper, Scissors");\
     var playerWins = 0;\
@@ -89,4 +87,32 @@ function playToFive() \{\
     /* YOUR CODE HERE */\
     return [playerWins, computerWins];\
 \}\
+\
+function playToFive() \{\
+    console.log("Let's play Rock, Paper, Scissors");\
+    var playerWins = 0;\
+    var computerWins = 0;\
+        \
+    while ((playerWins < 5) && (computerWins < 5)) \{\
+        var playerMove = getPlayerMove();\
+        var computerMove = getComputerMove();\
+        var winner = getWinner(playerMove,computerMove);\
+            \
+            if (winner === 'player') \{\
+                playerWins+=1;\
+            \}\
+            else if (winner === 'computer') \{\
+                computerWins+=1;\
+            \}\
+            else \{\
+                ((playerWins+=0) && (computerWins+0));\
+            \}\
+            \
+console.log("You chose " + playerMove + ". " + "The computer chose " + computerMove + ".");\
+console.log("The score so far is " + playerWins + " : " + computerWins + ".");\
+    \}\
+    return [playerWins, computerWins]; \
+\}\
+\
+playToFive();\
 }
